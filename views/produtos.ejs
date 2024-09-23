@@ -1,0 +1,20 @@
+<%- include ('partials/navbar.ejs') %>
+<%- include ('partials/header.ejs') %>
+    <h1>Produtos Registrado</h1>
+<table border="1">
+   <tr>
+    <th>Nome do Produto</th>
+    <th>Preço</th>
+    <th>Categoria</th>
+   </tr>
+   <tr>
+    <% produtos.forEach((produto) => { %>
+        <td><%= produto.nomeproduto %></td>
+        <td><%= produto.preco %></td>
+        <td><%= produto.categoria %></td>
+   </tr>
+   <% }) %>
+</table>
+</body>
+</html>
+<%- include ('partials/footer.ejs') %>

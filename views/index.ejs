@@ -1,0 +1,78 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+<div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/imgs/pan.png" class="d-block w-100" alt="Slide 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>Bem vindo(a) ao nosso Website!</h1>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/imgs/guitarras.jpg" class="d-block w-100" alt="Slide 2">
+        <div class="warning-text-emphasis carousel-caption d-none d-md-block ">
+          <h1>Visite nossa Loja Física!</h1>
+          <h2>Endereço no fim da página!</h2>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/imgs/car.jpg" class="d-block w-100" alt="Slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>PANORAMA feat Carrozza</h5>
+          <p>Instrumentos em estoque!</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden"></span>
+    </button>
+  </div>
+
+  <div class="jumbotron">
+    <br>
+    <p class="currentDate"></p>
+    </p>         
+    <p class="lead">
+      <a class="btn btn-warning " href="/pedidos" role="button">Verificar pedidos</a>
+    </p>
+  </div>
+<hr>
+
+      <div class="container marketing">
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="/imgs/cli.png" alt="Generic placeholder image" width="140" height="140">
+            <h2>Clientes</h2>
+            <p>Seção especializada para visualização de Dados dos Clientes.</p>
+            <p><a class="btn btn-warning" href="/clientes" role="button">Clientes &raquo;</a></p>
+          </div>
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="/imgs/produtos.webp" alt="Generic placeholder image" width="140" height="140">
+            <h2>Produtos</h2>
+            <p>Seção de visualização de Produtos em estoque Panorama.</p>
+            <p><a class="btn btn-warning" href="/produtos" role="button">Produtos &raquo;</a></p>
+          </div>
+          <div class="col-lg-4">
+            <img class="rounded" src="/imgs/carro.webp" alt="Generic placeholder image" width="140" height="140">
+            <h2>Pedidos</h2>
+            <p>Seção para visualizar Pedidos registrados.</p>
+            <p><a class="btn btn-warning" href="/pedidos" role="button">Pedidos &raquo;</a></p>
+          </div>
+        </div>
+
+
+       
+</div>
+    
+<%- include ('partials/footer.ejs') %>

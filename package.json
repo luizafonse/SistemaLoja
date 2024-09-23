@@ -1,5 +1,5 @@
 {
-  "name": "SistemaLoja",
+  "name": "sistemaloja",
   "version": "1.0.0",
   "description": "atividade_diegomax_afonso",
   "main": "index.js",
@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.0"
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "nodemon": "^3.1.7"
   }
 }
