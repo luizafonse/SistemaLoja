@@ -1,18 +1,73 @@
 <%- include ('partials/navbar.ejs') %>
 <%- include ('partials/header.ejs') %>
-    <h1>Pedidos Registrados</h1>
-<table border="1">
-   <tr>
-    <th width="150px">Número do Pedido</th>
-    <th>Valor</th>
-   </tr>
-   <tr>
-    <% pedidos.forEach((pedido) => { %>
-        <td><%= pedido.numpedido %></td>
-        <td><%= pedido.valor %></td>
-   </tr>
-   <% }) %>
-</table>
-</body>
-</html>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>Cadastrar Pedidos</h1>
+        </div>
+        <div class="card-body">
+            <form action="/pedidos/new" method="post">
+                <label>Número do Pedido:</label>
+                <input
+                  type="number"
+                  name="numero"
+                  id="numero"
+                  placeholder="Insira o número do Pedido"
+                  class="form-control"
+                  required
+                />
+                <label>Valor do Pedido:</label>
+                <input
+                  type="number"
+                  name="valor"
+                  id="valor"
+                  placeholder="Insira o Valor do Pedido"
+                  class="form-control"
+                  required
+                  step="0.01" <%# Permite valores decimais  %>
+                  
+                />
+                <br />
+                <input type="submit" class="btn btn-success" value="Cadastrar" />
+              </form>
+              <hr />
+            </div>
+          </div>
+        </div>
+        <br />
+
+        <div class="container">
+            <div class="card">
+              <div class="card-header">
+                <h1>Pedidos</h1>
+              </div>
+              <div class="card-body">
+                <table>
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Número:</th>
+                      <th>Valor:</th>
+                      <th colspan="2">Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% pedidos.forEach(pedido=> { %>
+                    <tr>
+                      <td><img src="imgs/order.png" width="30px" /></td>
+                      <td><%= pedido.numero %></td>
+                      <td><%= pedido.valor %></td>
+                      <td><a style="color: orange" href="/pedidos/edit/<%= pedido.id %>">Editar</a></td>
+                      <td>
+                        <a style="color: red" href="/pedidos/delete/<%= pedido.id %>"
+                          >Deletar</a
+                        >
+                      </td>
+                    </tr>
+                    <% }) %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
 <%- include ('partials/footer.ejs') %>
