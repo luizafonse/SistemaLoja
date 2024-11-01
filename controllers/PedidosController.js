@@ -1,9 +1,9 @@
 import express from "express";
 const router = express.Router();
-
+import Auth from "../middleware/Auth.js";
 import Pedido from "../models/Pedido.js";
 // ROTA PEDIDOS
-router.get("/pedidos", function (req, res) {
+router.get("/pedidos", Auth, (req, res) => {
   Pedido.findAll().then((pedidos) => {
     res.render("pedidos", {
       pedidos: pedidos,
@@ -11,7 +11,7 @@ router.get("/pedidos", function (req, res) {
   });
 });
 
-router.post("/pedidos/new", (req, res) => {
+router.post("/pedidos/new", Auth,(req, res) => {
   const numero = req.body.numero;
   const valor = req.body.valor;
   Pedido.create({
@@ -22,7 +22,7 @@ router.post("/pedidos/new", (req, res) => {
   });
 });
 
-router.get("/pedidos/delete/:id", (req, res) => {
+router.get("/pedidos/delete/:id", Auth, (req, res) => {
   const id = req.params.id;
   Pedido.destroy({
     where: {
@@ -36,7 +36,7 @@ router.get("/pedidos/delete/:id", (req, res) => {
       console.log(error);
     });
 });
-router.get("/pedidos/edit/:id", (req, res) => {
+router.get("/pedidos/edit/:id", Auth, (req, res) => {
   const id = req.params.id;
   Pedido.findByPk(id)
     .then((pedido) => {
@@ -48,7 +48,7 @@ router.get("/pedidos/edit/:id", (req, res) => {
 });
 
 
-router.post("/pedidos/update", (req, res) => {
+router.post("/pedidos/update", Auth,(req, res) => {
   const id = req.body.id;
   const numero = req.body.numero;
   const valor = req.body.valor;
